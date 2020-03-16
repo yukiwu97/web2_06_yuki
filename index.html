@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Yuki Wu</title>
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <h1 align="center">Xuezhu Yuki Wu</h1>
+    <div id="background"></div>
+    <div id="like"></div>
+    <div id="imgs"></div>
+
+    <footer>
+        <p>my portfolio:</p>
+        <a href="https://yukiwu.art">
+            <img src="images/websitelogo.png" alt="websitelogo" width="50" height="50">
+        </a>
+    </footer>
+    
+
+    <script type="text/babel">
+
+        var bk_ul = React.createElement(
+            "ul",
+            {key: "bkul"},
+            React.createElement("li", null, "From Beijing, China"),
+            React.createElement("li", null, "BFA in Illustration"),
+            React.createElement("li", null, "Virgo♍")
+        )
+        ReactDOM.render(
+            [<h3 key="bk1">Background</h3>, bk_ul],
+            document.getElementById('background')
+        )
+
+        var like_ul = React.createElement(
+            "ul",
+            {key: "likeul"},
+            React.createElement("li", null, "Indie rock music"),
+            React.createElement("li", null, "Rainy days"),
+            React.createElement("li", null, "Horror movies"),
+            React.createElement("li", null, "Aquariums")
+        )
+        ReactDOM.render(
+            [<h3 key="lk1">I like</h3>, like_ul],
+            document.getElementById('like')
+        )
+
+        const imgsList = ["images/picture.jpg", "images/picture2.jpg"];
+        ReactDOM.render(
+            <div> {
+                imgsList.map(function(pic, index) {
+                    return <img src={pic} alt="picture" width="400" height="460" key={index}/>
+                })
+            } </div>,
+            document.getElementById('imgs')
+        );
+    </script>
+</body>
+
+</html>
